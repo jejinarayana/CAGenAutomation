@@ -31,7 +31,7 @@ public class SampleModelTests extends Base{
 	}
 	
 	@BeforeClass
-	public void appLuanch(){
+	public void appLaunch(){
 		driverSetup();
 		driver.get(prop.getProperty("sample_winasp_url"));
 		System.out.println("Application has Launched...........");
@@ -145,7 +145,7 @@ public class SampleModelTests extends Base{
 	
 	@AfterClass
 	public void tearDown() {
-	//	driver.close();
+		driver.close();
 	}	
 	
 	
