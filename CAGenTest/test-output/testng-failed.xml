@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CA Gen Distrubuted Test Automation]">
+  <test thread-count="5" name="Acceptance Test(failed)">
+    <classes>
+      <class name="com.cagen.qa.sample.winasp.tests.SampleModelTests">
+        <methods>
+          <include name="deleteDivison"/>
+          <include name="tearDown"/>
+          <include name="addEmployee"/>
+          <include name="deleteDept"/>
+          <include name="appLuanch"/>
+          <include name="addDept"/>
+          <include name="addDivison"/>
+          <include name="deleteEmp"/>
+        </methods>
+      </class> <!-- com.cagen.qa.sample.winasp.tests.SampleModelTests -->
+    </classes>
+  </test> <!-- Acceptance Test(failed) -->
+</suite> <!-- Failed suite [CA Gen Distrubuted Test Automation] -->

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+  
+<suite name="CA Gen Distrubuted Test Automation" >
+	<test name="Acceptance Test" >
+    	<classes>
+       		<class name="com.cagen.qa.sample.winasp.tests.SampleModelTests" />
+       	</classes>
+  </test>
+  
+  <!--  
+  <test name="Regression">
+    <classes>
+      <class name="com.cagen.qa.sample.winasp.tests.SampleModelTests" />
+      <class name="com.cagen.qa.sample.winjava.tests.SampleModelTests" />
+    </classes>
+  </test>
+ -->   
+</suite>

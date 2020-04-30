@@ -1,0 +1,108 @@
+package com.cagen.qa.sample.winasp.pageobjects;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.cagen.qa.base.Base;
+import com.cagen.qa.utils.TestUtil;
+
+public class CorporateEmployees extends Base {
+
+	// Page Factory -- Objects Repository for Employee Page
+	
+			@FindBy(xpath = "//*[contains(@id,'Item1_0') and contains(@accesskey,'E')]") WebElement menu_Edit;
+			
+			@FindBy(xpath = "//*[contains(@id,'Item1_0_0') and contains(@accesskey,'A')]") WebElement submenu_Edit_Add;
+			
+			@FindBy(xpath = "//*[contains(@id,'Item1_0_1') and contains(@accesskey,'D')]") WebElement submenu_Edit_Delete;
+			
+			@FindBy(xpath = "//*[contains(@id,'Item1_5') and contains(@accesskey,'C')]") WebElement menu_Close;
+			
+			@FindBy(xpath = "//tr[@id='ctl05_R0']") WebElement emp_firstRow;
+			@FindBy(xpath = "//tr[@id='ctl05_R1']") WebElement emp_secondRow;
+			@FindBy(xpath = "//tr[@id='ctl05_R2']") WebElement emp_thirdRow;
+			@FindBy(xpath = "//tr[@id='ctl05_R3']") WebElement emp_fourthRow;
+			
+			
+			
+			// Objects Initialization
+			public CorporateEmployees() {
+				PageFactory.initElements(driver, this);
+			}
+			
+			//Methods
+
+			public EmployeeDetails navigate_Edit_Add() {
+				
+				System.out.println("Clicking on Edit -->Add");
+				Actions action = new Actions(driver);
+				TestUtil.waitForPageToLoad(2000);
+				//	action.moveToElement(menu_Edit).moveToElement(submenu_Edit_Add).click().build().perform();
+				action.moveToElement(menu_Edit).build().perform();
+				submenu_Edit_Add.click();
+				return new EmployeeDetails();
+			}
+			
+			public void navigate_Edit_Delete() {
+				driver.switchTo().defaultContent();
+				System.out.println("Clicking on Edit -->Delete");
+			//	driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
+				Actions action = new Actions(driver);
+				TestUtil.waitForPageToLoad(1000);
+				action.moveToElement(menu_Edit).build().perform();
+				submenu_Edit_Delete.click();
+				TestUtil.waitForPageToLoad(2000);
+				Set<String> handler = driver.getWindowHandles();
+				Iterator<String> it = handler.iterator();
+				String parentWindow = it.next();
+				System.out.println("Parent Window Name is...."+parentWindow+"........."+"And PageTitle is..... "+driver.getTitle());
+				String childtWindow = it.next();
+				driver.switchTo().window(childtWindow);
+				System.out.println("Child Window Name is...."+childtWindow+"........."+"And PageTitle is..... "+driver.getTitle());
+				System.out.println("Set Focus to Child Window.."+driver.getTitle());
+				driver.switchTo().frame("IFrame1");
+			// Click on 'Yes' Button
+			//	driver.findElement(By.xpath("//input[@name='Button2']")).click();
+				driver.findElement(By.xpath("//input[@type='button' and @value='Yes']")).click();
+				driver.switchTo().window(parentWindow);
+			//	driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
+				System.out.println("Set Focus to Parent Window.."+driver.getTitle());
+				menu_Close.click();
+			}
+			
+			public CorporateManagement CloseDeptPage() {
+				 menu_Close.click();
+				 return new CorporateManagement();
+			}
+			
+			public void SelectRowToDeleteDept() {
+				System.out.println("Selecting Row to Dlete.......");
+				driver.switchTo().frame("IFrame1");
+				emp_firstRow.click();
+				
+				
+				
+			}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.cagen.qa.sample.winasp.tests.SampleModelTests">
+        <methods>
+          <include name="deleteDivison"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="addEmployee"/>
+          <include name="deleteDept"/>
+          <include name="addDept"/>
+          <include name="addDivison"/>
+          <include name="deleteEmp"/>
+        </methods>
+      </class> <!-- com.cagen.qa.sample.winasp.tests.SampleModelTests -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
