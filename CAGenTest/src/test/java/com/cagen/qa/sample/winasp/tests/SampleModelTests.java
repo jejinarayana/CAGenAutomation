@@ -3,6 +3,7 @@ package com.cagen.qa.sample.winasp.tests;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -30,7 +31,7 @@ public class SampleModelTests extends Base{
 		super();
 	}
 	
-	@BeforeClass
+	@BeforeMethod
 	public void appLaunch(){
 		driverSetup();
 		driver.get(prop.getProperty("sample_winasp_url"));
