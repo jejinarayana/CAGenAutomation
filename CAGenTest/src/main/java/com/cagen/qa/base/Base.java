@@ -51,7 +51,7 @@ public class Base {
 			System.out.println("Please Specify the Valid Browser......");
 		
 		
-		driver.manage().window().maximize();
+	//	driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
