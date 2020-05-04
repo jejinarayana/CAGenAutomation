@@ -2,6 +2,7 @@ package com.cagen.qa.sample.winasp.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -140,11 +141,7 @@ public class SampleModelTests extends Base{
 		}
 	
 	
-	
-	
-	
-	
-	@AfterClass
+	@AfterMethod
 	public void tearDown() {
 		driver.close();
 	}	
