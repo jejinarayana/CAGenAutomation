@@ -32,7 +32,7 @@ public class SampleModelTests extends Base{
 		super();
 	}
 	
-	@BeforeMethod
+	@BeforeClass
 	public void appLaunch(){
 		driverSetup();
 		driver.get(prop.getProperty("sample_winasp_url"));
@@ -141,7 +141,7 @@ public class SampleModelTests extends Base{
 		}
 	
 	
-	@AfterMethod
+	@AfterClass
 	public void tearDown() {
 		driver.close();
 	}	
