@@ -76,8 +76,8 @@ public class CorporateDivisions extends Base{
 	}
 	
 	public CorporateManagement CloseDivisionPage() {
-		 menu_Close.click();
-		 return new CorporateManagement();
+		menu_Close.click();
+		return new CorporateManagement();
 	}
 	
 	public void SelectRowTODelete() {

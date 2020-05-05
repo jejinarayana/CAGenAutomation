@@ -77,8 +77,8 @@ public class CorporateDepartments extends Base{
 		}
 		
 		public CorporateManagement CloseDeptPage() {
-			 menu_Close.click();
-			 return new CorporateManagement();
+			menu_Close.click();
+			return new CorporateManagement();
 		}
 		
 		public void SelectRowToDeleteDept() {

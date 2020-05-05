@@ -76,7 +76,7 @@ public class CorporateEmployees extends Base {
 				menu_Close.click();
 			}
 			
-			public CorporateManagement CloseDeptPage() {
+			public CorporateManagement CloseEmpPage() {
 				 menu_Close.click();
 				 return new CorporateManagement();
 			}
