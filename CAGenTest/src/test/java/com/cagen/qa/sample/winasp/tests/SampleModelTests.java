@@ -103,7 +103,7 @@ public class SampleModelTests extends Base{
 		corpEmp = corpMgmt.navigate_List_Employees();
 		empDetails = corpEmp.navigate_Edit_Add();
 		corpEmp = empDetails.addEmployeeData("101", "Emp101", "111", "1111");
-		corpEmp.CloseDeptPage();		
+		corpEmp.CloseEmpPage();
 		System.out.println("Employee Added successfully");
 	}
 	
@@ -114,7 +114,7 @@ public class SampleModelTests extends Base{
 		corpEmp.SelectRowToDeleteDept();
 		corpEmp.navigate_Edit_Delete();
 		TestUtil.waitForPageToLoad(1000);
-		corpEmp.CloseDeptPage();
+		corpEmp.CloseEmpPage();
 		System.out.println("Employee Deleted successfully");
 	}
 	
