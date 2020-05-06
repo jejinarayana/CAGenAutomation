@@ -1,3 +1,7 @@
+/*
+ * @Autohor: Jeji Narayana Kadiyam*
+ */
+
 package com.cagen.qa.sample.winasp.pageobjects;
 
 import java.util.Iterator;
@@ -62,6 +66,7 @@ public class CorporateEmployees extends Base {
 				Iterator<String> it = handler.iterator();
 				String parentWindow = it.next();
 				System.out.println("Parent Window Name is...."+parentWindow+"........."+"And PageTitle is..... "+driver.getTitle());
+				TestUtil.waitForPageToLoad(2000);
 				String childtWindow = it.next();
 				driver.switchTo().window(childtWindow);
 				System.out.println("Child Window Name is...."+childtWindow+"........."+"And PageTitle is..... "+driver.getTitle());
@@ -73,7 +78,7 @@ public class CorporateEmployees extends Base {
 				driver.switchTo().window(parentWindow);
 			//	driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
 				System.out.println("Set Focus to Parent Window.."+driver.getTitle());
-				menu_Close.click();
+			//	menu_Close.click();
 			}
 			
 			public CorporateManagement CloseEmpPage() {
@@ -82,7 +87,7 @@ public class CorporateEmployees extends Base {
 			}
 			
 			public void SelectRowToDeleteDept() {
-				System.out.println("Selecting Row to Dlete.......");
+				System.out.println("Selecting Row to Delete.......");
 				driver.switchTo().frame("IFrame1");
 				emp_firstRow.click();
 				

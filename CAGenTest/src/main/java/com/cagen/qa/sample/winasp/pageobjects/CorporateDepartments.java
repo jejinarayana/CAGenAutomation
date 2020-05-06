@@ -1,3 +1,7 @@
+/*
+ * @Autohor: Jeji Narayana Kadiyam*
+ */
+
 package com.cagen.qa.sample.winasp.pageobjects;
 
 import java.util.Iterator;
@@ -63,17 +67,19 @@ public class CorporateDepartments extends Base{
 			Iterator<String> it = handler.iterator();
 			String parentWindow = it.next();
 			System.out.println("Parent Window Name is...."+parentWindow+"........."+"And PageTitle is..... "+driver.getTitle());
+			TestUtil.waitForPageToLoad(2000);
 			String childtWindow = it.next();
 			driver.switchTo().window(childtWindow);
 			System.out.println("Child Window Name is...."+childtWindow+"........."+"And PageTitle is..... "+driver.getTitle());
 			System.out.println("Set Focus to Child Window.."+driver.getTitle());
+		//	driver.switchTo().defaultContent();
 			driver.switchTo().frame("IFrame1");
 		//	driver.findElement(By.xpath("//input[@name='Button1']")).click();
 			driver.findElement(By.xpath("//input[@type='button' and @value='Yes']")).click();
 			driver.switchTo().window(parentWindow);
 		//	driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
 			System.out.println("Set Focus to Parent Window.."+driver.getTitle());
-			menu_Close.click();
+		
 		}
 		
 		public CorporateManagement CloseDeptPage() {
@@ -82,7 +88,7 @@ public class CorporateDepartments extends Base{
 		}
 		
 		public void SelectRowToDeleteDept() {
-			System.out.println("Selecting Row to Dlete.......");
+			System.out.println("Selecting Row to Delete.......");
 			driver.switchTo().frame("IFrame1");
 			dept_firstRow.click();
 			

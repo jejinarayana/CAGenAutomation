@@ -1,3 +1,7 @@
+/*
+ * @Autohor: Jeji Narayana Kadiyam*
+ */
+
 package com.cagen.qa.base;
 
 import java.io.FileInputStream;
@@ -8,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.cagen.qa.utils.TestUtil;
@@ -34,17 +39,20 @@ public class Base {
 	}
 	
 	public static void driverSetup() { 
-	//	System.setProperty("webdriver.chrome.driver","C:\\CAGen-Automation\\BrowserDrivers\\chromedriver.exe");
-	//	driver = new ChromeDriver();
-	//	System.setProperty("webdriver.ie.driver","C:\\CAGen-Automation\\BrowserDrivers\\IEDriverServer.exe");
-	//	driver = new InternetExplorerDriver();
+	
 		String currentDirectory = System.getProperty("user.dir");
 		String browserName = prop.getProperty("browser");
-	//	if (browserName.equalsIgnoreCase("chrome")) {
-		if (browserName.equals("chrome")){
+		if (browserName.equalsIgnoreCase("chrome")){
 			System.setProperty("webdriver.chrome.driver", currentDirectory + "\\browserDrivers\\chromedriver.exe");
 			driver = new ChromeDriver();
-		}else if (browserName.equals("IE")) {
+		}else if (browserName.equalsIgnoreCase("chrome-headless")){
+			System.setProperty("webdriver.chrome.driver", currentDirectory + "\\browserDrivers\\chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
+            options.addArguments("window-size=1200x600");
+            driver = new ChromeDriver(options);
+            System.out.println("Starting Headless Chrome Browser Testing......");
+		}else if (browserName.equalsIgnoreCase("IE")) {
 			System.setProperty("webdriver.ie.driver", currentDirectory + "\\browserDrivers\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}else 
