@@ -72,13 +72,13 @@ public class CorporateDepartments extends Base{
 			driver.switchTo().window(childtWindow);
 			System.out.println("Child Window Name is...."+childtWindow+"........."+"And PageTitle is..... "+driver.getTitle());
 			System.out.println("Set Focus to Child Window.."+driver.getTitle());
-		//	driver.switchTo().defaultContent();
+			driver.switchTo().defaultContent();
 			driver.switchTo().frame("IFrame1");
 		//	driver.findElement(By.xpath("//input[@name='Button1']")).click();
 			driver.findElement(By.xpath("//input[@type='button' and @value='Yes']")).click();
 			driver.switchTo().window(parentWindow);
 		//	driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
-			System.out.println("Set Focus to Parent Window.."+driver.getTitle());
+			System.out.println("Set Focus back to Parent Window.."+driver.getTitle());
 		
 		}
 		
